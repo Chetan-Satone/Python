@@ -5,7 +5,7 @@
     For numbers divisible by both 3 and 5, print "FizzBuzz".
 """
 
-for i in range(0,100):
+for i in range(0,101):
     if(i % 3 == 0):
         print("Fizz")
     elif(i % 5 == 0):
