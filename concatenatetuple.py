@@ -7,7 +7,7 @@
 int = (3,1,4) 
 var = (1,5,9)
 
-tuple= (int) + (var)
+tuple= (int) + (var)   # to add tuples take two variables and add them easily
 
 print(tuple)
 
