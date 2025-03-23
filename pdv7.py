@@ -5,6 +5,8 @@ data = {
     "duration": [50, 20, 30]
 }
 
-myvar = pd.Series(data)
+myvar = pd.DataFrame(data)
 
 print(myvar)
+
+print(myvar.loc[0])
