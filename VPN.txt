@@ -1,0 +1,51 @@
+Both CDAC-BLR and CDAC-PUNE ROUTERS
+-----------------------------------
+crypto isakmp policy 100
+ encr 3des
+ hash sha256
+ authentication pre-share
+ group 5
+
+
+On CDAC-BLR
+------------
+crypto isakmp key cdac address 99.0.0.1
+!
+access-list 160 permit ip 10.0.0.0 0.0.0.255 192.168.1.0 0.0.0.255
+!
+
+On CDAC-PUNE
+------------
+crypto isakmp key cdac address 71.0.0.1
+!
+access-list 160 permit ip  192.168.1.0 0.0.0.255 10.0.0.0 0.0.0.255
+
+
+Both CDAC-BLR and CDAC-PUNE ROUTERS
+-----------------------------------
+crypto ipsec transform-set TS1 ah-sha256-hmac
+ mode tunnel
+!
+On CDAC-BLR
+------------
+crypto map MAP11 10 ipsec-isakmp
+ set peer 99.0.0.1
+ set transform-set TS1
+ match address 160
+
+On CDAC-PUNE
+------------
+crypto map MAP11 10 ipsec-isakmp
+ set peer 71.0.0.1
+ set transform-set TS1
+ match address 160
+
+Both CDAC-BLR and CDAC-PUNE ROUTERS
+-----------------------------------
+interface Serial1/0
+  crypto map MAP11
+
+command to verify 
+
+CDAC-BLR# show crypto isakmp sa
+CDAC-BLR# show crypto IPsec sa

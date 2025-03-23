@@ -1,3 +1,4 @@
+
 import socket
 import sys
 
@@ -22,4 +23,3 @@ except socket.gaierror:
 # connecting to the server 
 s.connect((host_ip, port)) 
  
-print ("the socket has successfully connected to google") 
