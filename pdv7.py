@@ -9,4 +9,4 @@ myvar = pd.DataFrame(data)
 
 print(myvar)
 
-print(myvar.loc[0])
+print(myvar.loc[[0, 1]])
