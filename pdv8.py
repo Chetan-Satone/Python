@@ -13,6 +13,6 @@ print(df.head(10))
 
 print(df.info)
 
-new_df = df.dropna()
+new_df = df.dropna()     #this method returns a new dataframe , will not change the original
 
 print(new_df.to_string())

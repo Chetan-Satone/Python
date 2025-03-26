@@ -1,4 +1,4 @@
-s = "level"  # string
+s = input("Enter any word: ")  # string
 
 i,j = 0, len(s) - 1  # two pointers
 
